@@ -194,7 +194,7 @@ This final step publishes your API to Salesforce and creates the necessary compo
 heroku salesforce:publish api-spec.yaml \
   --client-name MyAPI \
   --connection-name CONNECTION_NAME \
-  --authorization-connected-app-name MyAppLinkConnectedApp \
+  --authorization-external-client-app-name MyAppLinkExternalClientApp \
   --authorization-permission-set-name MyAppLinkPermSet \
   --addon YOUR_ADDON_NAME
 ```
@@ -202,7 +202,7 @@ heroku salesforce:publish api-spec.yaml \
 **Parameter Breakdown:**
 - `--client-name`: The name for the External Service and its generated Apex classes (e.g., `MyAPI`).
 - `--connection-name`: The friendly name you gave the AppLink connection in the previous step (e.g., `production_org`).
-- `--authorization-connected-app-name`: The name for the **new** Connected App that Heroku will create. **Note:** This value must match the `connectedApp` value defined in `api-spec.yaml`.
+- `--authorization-external-client-app-name`: The name for the **new** External Client App that Heroku will create. **Note:** This value must match the `externalClientApp` value defined in `api-spec.yaml`.
 - `--authorization-permission-set-name`: The name for the **new** Permission Set that Heroku will create. **Note:** This value must match the `permissionSet` value defined in `api-spec.yaml`.
 - `--addon`: The unique name of your AppLink add-on (e.g., `applink-slippery-54321`).
 
